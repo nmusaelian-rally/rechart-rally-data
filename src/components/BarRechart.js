@@ -4,12 +4,6 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 
-/* const data = [
-  {
-    name: 'Page A', uv: 4000, pv: 2400, amt: 2400,
-  },
-]; */
-
 const workspace = 41529001;
 const project = 332322441800;
 const type = 'HierarchicalRequirement';
@@ -67,7 +61,6 @@ class BarRechart extends PureComponent {
             const queryReleased = `${JSON.stringify(findReleased)}`;
             const url1 = `${api}${queryInProgress}&fields=[${fields}]&hydrate=[${hydrate}]`;
             const url2 = `${api}${queryReleased}&fields=[${fields}]&hydrate=[${hydrate}]`;
-            console.log(`url2: ${url2}`);
             const result = await axios.all([
               axios.get(url1, {headers: headers}),
               axios.get(url2, {headers: headers})
@@ -89,8 +82,6 @@ class BarRechart extends PureComponent {
         await this.makeRequest();
     }
     async componentDidUpdate(){
-        console.log(`this.state.inProgress: ${this.state.inProgress}`);
-        console.log(`this.state.released: ${this.state.released}`);
         await this.makeRequest();
     }
     makeData(){

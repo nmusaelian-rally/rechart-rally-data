@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import IterationDropdown from './components/IterationDropdown';
+import BarRechart from './components/BarRechart';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    iteration: null
+  } 
+
+  selectIteration = (value) => {
+    console.log(`calling getIteration of App component with value: ${value}`);
+    this.setState({
+        iteration: value
+    })
+  }
+  render(){
+      return (
+        <div className="App">
+            <IterationDropdown selectIteration={this.selectIteration} />
+            {this.state.iteration  && <BarRechart iteration={this.state.iteration} />}
+        </div>
+      );
+  }  
 }
 
 export default App;

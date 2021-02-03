@@ -10,7 +10,7 @@ const pagesize = 16;
 
 const apiKey = process.env.REACT_APP_APIKEY;
 const params = { workspace: `workspace/${workspace}`, 
-                           query: `((Project.ObjectID = ${project})AND(StartDate > 2019-12-31))`,
+                           query: `(((Project.ObjectID = ${project})AND(StartDate > 2019-12-31))AND(EndDate < 2021-02-08))`,
                            fetch: fetch,
                            pagesize: pagesize,
                            order: 'StartDate DESC'

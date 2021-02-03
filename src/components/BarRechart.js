@@ -113,8 +113,8 @@ class BarRechart extends PureComponent {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar name="moved to InProgress" dataKey="InProgress" fill="#8884d8" />
-        <Bar name="moved to Released" dataKey="Released" fill="#82ca9d" />
+        <Bar name="InProgress" dataKey="InProgress" fill="#8884d8" />
+        <Bar name="Released" dataKey="Released" fill="#82ca9d" />
       </BarChart>
     );
   }

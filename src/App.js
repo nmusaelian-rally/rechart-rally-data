@@ -16,8 +16,13 @@ class App extends Component {
   render(){
       return (
         <div className="App">
-            <IterationDropdown selectIteration={this.selectIteration} />
-            {this.state.iteration  && <BarRechart iteration={this.state.iteration} />}
+            <h3 id="top">Count of stories moved to InProgress and Released during iteration</h3>
+            <div id="left">
+              <IterationDropdown selectIteration={this.selectIteration} />
+            </div>
+            <div id="right">
+              {this.state.iteration  && <BarRechart iteration={this.state.iteration} />}
+            </div>
         </div>
       );
   }  

@@ -2,16 +2,17 @@ html {
   height: 100%;
 }
 p {
-  margin: 0px;
+  margin: 2px;
 }
 body {
-min-height:100%;
-margin:20;
-display:grid;
-grid-template-columns:800px 800px;
-grid-template-areas:
-  "top" "top"
-  "left right"
+  font-family: Arial, Helvetica, sans-serif;
+  min-height:100%;
+  margin:20;
+  display:grid;
+  grid-template-columns:800px 800px;
+  grid-template-areas:
+    "top" "top"
+    "left right"
 }
 
 #top {
